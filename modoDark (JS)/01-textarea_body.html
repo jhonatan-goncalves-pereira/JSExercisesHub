@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .corpo-padrao {
+            background-color: white;
+        }
+        .texto-padrao {
+            color: black;
+        }
+        .corpo-escuro {
+            background-color: black;
+        }
+        .texto-claro {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body id="corpoBody" class="corpo-padrao">
+    
+    <h2 id="txtTitulo" class="texto-padrao">MUDE A COR DO ELEMENTO HTML &lt;TEXTAREA&gt;</h2>
+    
+    <textarea name="" id="textareMutavel" class="texto-padrao" cols="100" rows="10"></textarea>
+    
+    <button id="btnMudarCor">
+        MUDAR COR
+    </button>
+    <button id="btnResetarCor">
+        RESETAR COR
+    </button>
+    
+    
+    <script>
+        var corpoBody = document.getElementById("corpoBody");
+        var txtTitulo = document.getElementById("txtTitulo");
+        var textareMutavel = document.getElementById("textareMutavel");
+        var btnMudarCor = document.getElementById("btnMudarCor");
+        var btnResetarCor = document.getElementById("btnResetarCor");
+
+        function mudarCor() {
+            corpoBody.classList.remove("corpo-padrao");
+            txtTitulo.classList.remove("texto-padrao");
+            textareMutavel.classList.remove("texto-padrao");
+            
+            corpoBody.classList.add("corpo-escuro");
+            txtTitulo.classList.add("texto-claro");
+            textareMutavel.classList.add("texto-claro");
+        }
+
+        function resetarCor() {
+            corpoBody.classList.remove("corpo-escuro");
+            txtTitulo.classList.remove("texto-claro");
+            textareMutavel.classList.remove("texto-claro");
+
+            corpoBody.classList.add("corpo-padrao");
+            txtTitulo.classList.add("texto-padrao");
+            textareMutavel.classList.add("texto-padrao");
+        }
+
+        btnMudarCor.addEventListener("click", mudarCor);
+        btnResetarCor.addEventListener("click", resetarCor);
+    </script>
+
+
+</body>
+</html>
